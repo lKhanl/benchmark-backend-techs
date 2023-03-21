@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: Backend Technologies Benchmark
+  api:
+    url: http://localhost:2000
+
+gin:
+  api:
+    url: http://localhost:3000
+
+server:
+  port: 1000

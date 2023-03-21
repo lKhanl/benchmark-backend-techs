@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  gateway:
+    build: gateway/.
+    ports:
+      - "1000:1000"
+  spring:
+    build: spring-boot/.
+    ports:
+      - "2000:2000"
+  gin:
+    build: gin-gonic/.
+    ports:
+      - "3000:3000"
+  
