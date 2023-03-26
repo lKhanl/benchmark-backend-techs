@@ -7,6 +7,8 @@ This is a benchmark of the backend technologies. The goal is to compare the perf
 ## Technologies
 - [Go Gin](https://go.dev/)
 - [Spring Boot](https://spring.io/projects/spring-boot)
+- [ExpressJs](https://expressjs.com/)
+- [.Net Core](https://dotnet.microsoft.com/)
 
 ## How to run
 
