@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = dotnet_core
+build_property.ProjectDir = /Users/ard/Desktop/benchmark-backend-techs/dotnet-core/dotnet-core/
