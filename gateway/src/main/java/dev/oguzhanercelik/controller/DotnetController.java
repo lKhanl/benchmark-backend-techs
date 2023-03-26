@@ -1,6 +1,6 @@
 package dev.oguzhanercelik.controller;
 
-import dev.oguzhanercelik.client.GinApiClient;
+import dev.oguzhanercelik.client.DotnetApiClient;
 import dev.oguzhanercelik.model.response.BenchmarkResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/gin")
-public class GinController {
+@RequestMapping("/dotnet")
+public class DotnetController {
 
-    private final GinApiClient ginApiClient;
+    private final DotnetApiClient dotnetApiClient;
 
     @GetMapping
     public BenchmarkResponse benchmark() {
-        return ginApiClient.benchmark();
+        return dotnetApiClient.benchmark();
     }
 
 }

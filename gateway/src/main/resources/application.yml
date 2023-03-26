@@ -8,5 +8,13 @@ gin:
   api:
     url: http://localhost:3000
 
+express:
+  api:
+    url: http://localhost:4000
+
+dotnet:
+  api:
+    url: http://localhost:5000
+
 server:
   port: 1000

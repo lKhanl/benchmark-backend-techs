@@ -13,4 +13,11 @@ services:
     build: gin-gonic/.
     ports:
       - "3000:3000"
-  
+  express:
+    build: express-js/.
+    ports:
+      - "4000:4000"
+  dotnet:
+    build: dotnet-core/dotnet-core/.
+    ports:
+      - "5000:80"
