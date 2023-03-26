@@ -18,8 +18,27 @@ docker-compose up --build
 
 ## How to test
 
-To test the applications, request the following URL:
+- You can use the following command to test the applications for all the technologies:
 
 ```bash
 curl http://localhost:1000
 ```
+
+- You can test the applications for each technology:
+
+```bash
+curl http://localhost:1000/spring
+curl http://localhost:1000/gin
+curl http://localhost:1000/express
+curl http://localhost:1000/dotnet
+```
+
+
+## Results
+
+| Technology  | Requests per second |
+|-------------|---------------------|
+| Go Gin      | ~ 1000 ns           |
+| Spring Boot | ~ 6000 ns           |
+| .Net Core   | ~ 2000 ns           |
+| ExpressJs   | ~ 4000 ns           |
