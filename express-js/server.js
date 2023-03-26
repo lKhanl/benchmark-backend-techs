@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
         value+=i
     }
     let endTime = performance.now()
-    const time = endTime - startTime
+    const time = (endTime - startTime) * 100000
     return res.status(200).send({
       result: value,
       tech: "Express.js",

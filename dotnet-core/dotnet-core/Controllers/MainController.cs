@@ -33,7 +33,7 @@ namespace dotnet_core.Controllers
             }
             String tech = ".NET Core";
             double endTime = System.Diagnostics.Stopwatch.GetTimestamp();
-            double time = (endTime - startTime) / 100000;
+            double time = (endTime - startTime);
             return Ok(MainMapper.toResponse(result, tech, time));
         }
     }
