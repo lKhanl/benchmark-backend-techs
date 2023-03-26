@@ -1,23 +1,16 @@
-# Build stage
+FROM mcr.microsoft.com/dotnet/aspnet:3.1 as base
+WORKDIR /app
+
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
+COPY . /src
+WORKDIR /src
+RUN ls
+RUN dotnet build "dotnet-core.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "dotnet-core.csproj" -c Release -o /app/publish
+
+FROM base AS final
 WORKDIR /app
-
-# Copy csproj and restore as distinct layers
-COPY dotnet-core.csproj .
-RUN dotnet restore
-
-# Copy everything else and build
-COPY . .
-RUN dotnet publish -c Release -o out
-
-# Run stage
-FROM mcr.microsoft.com/dotnet/aspnet:3.1 AS runtime
-WORKDIR /app
-COPY --from=build /app/out ./
-
-# Set environment variables if needed
-ENV ASPNETCORE_ENVIRONMENT=Production
-
-# Expose the port and start the app
-EXPOSE 5000
-ENTRYPOINT ["dotnet", "./obj/Debug/dotnet-core.dll"]
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "dotnet-core.dll"]
