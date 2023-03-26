@@ -6,4 +6,12 @@
   </PropertyGroup>
 
 
+  <ItemGroup>
+    <None Remove="Responses\" />
+    <None Remove="Mapper\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Responses\" />
+    <Folder Include="Mapper\" />
+  </ItemGroup>
 </Project>
